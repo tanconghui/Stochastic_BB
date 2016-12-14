@@ -3,6 +3,7 @@ Python implementation of SVRG-BB and SGD-BB algorithms of the following paper:
 
 ["Barzilai-Borwein Step Size for Stochastic Gradient Descent". Conghui Tan, Shiqian Ma, Yu-Hong Dai, Yuqiu Qian. _NIPS 2016_.](http://papers.nips.cc/paper/6286-barzilai-borwein-step-size-for-stochastic-gradient-descent)
 
+Please cite this paper if you use this code in your published research project.
 
 ## Files
 
