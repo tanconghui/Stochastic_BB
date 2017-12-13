@@ -50,10 +50,10 @@ if __name__ == '__main__':
     print('Begin to run SVRG-BB:')
     x = svrg_bb(grad, 1e-3, n, d, func=func, max_epoch=50)
     y_predict = np.sign(np.dot(A_test, x))
-    print('Test accuracy: %f' % (np.count_nonzero(y_test == y_predict) / n))
+    print('Test accuracy: %f' % (np.count_nonzero(y_test == y_predict)*1.0 / n))
 
     # test SGD-BB
     print('\nBegin to run SGD-BB:')
-    x = sgd_bb(grad, 1e-3, n, d, phi=lambda k: k, func=func, max_epoch=50)
+    x = sgd_bb(grad, 1e-3, n, d, phi=lambda k: k, func=func, beta=0.3, max_epoch=50)
     y_predict = np.sign(np.dot(A_test, x))
-    print('Test accuracy: %f' % (np.count_nonzero(y_test == y_predict) / n))
+    print('Test accuracy: %f' % (np.count_nonzero(y_test == y_predict)*1.0 / n))
