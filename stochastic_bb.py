@@ -117,10 +117,7 @@ def sgd_bb(grad, init_step_size, n, d, max_epoch=100, m=0, x0=None, beta=0, phi=
         if k > 0:
             last_grad_hat = grad_hat
             last_x_tilde = x_tilde
-        if k==0:
-            grad_hat = np.zeros(d)
-
-        #core logic
+        grad_hat = np.zeros(d)
         for i in range(m):
             idx = (random.randrange(n), )
             g = grad(x, idx)
