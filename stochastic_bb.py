@@ -62,7 +62,7 @@ def svrg_bb(grad, init_step_size, n, d, max_epoch=100, m=0, x0=None, func=None,
     return x
 
 
-def sgd_bb(grad, init_step_size, n, d, max_epoch=100, m=0, x0=None, beta=0, phi=lambda k: k,
+def sgd_bb(grad, init_step_size, n, d, max_epoch=100, m=None, x0=None, beta=None, phi=lambda k: k,
            func=None, verbose=True):
     """
         SGD with Barzilai-Borwein step size for solving finite-sum problems
@@ -80,7 +80,7 @@ def sgd_bb(grad, init_step_size, n, d, max_epoch=100, m=0, x0=None, beta=0, phi=
         if verbose:
             print('Info: set m=n by default')
 
-    if beta <= 0 or beta >= 1:
+    if not isinstance(beta, float) or beta <= 0 or beta >= 1:
         beta = 10/m
         if verbose:
             print('Info: set beta=10/m by default')
